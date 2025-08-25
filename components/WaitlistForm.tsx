@@ -1,67 +1,14 @@
 import React, { useState } from 'react';
-import { FormStatus, HustleIdea } from '../types';
-import { LightbulbIcon, ErrorCircleIcon, LoadingSpinnerIcon } from './icons';
-import { GoogleGenAI, Type } from "@google/genai";
-
-// Initialize the Gemini client.
-// The API key is expected to be available in the environment variables.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+import { FormStatus } from '../types';
+import { CheckCircleIcon, ErrorCircleIcon, LoadingSpinnerIcon } from './icons';
 
 export const WaitlistForm = () => {
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<FormStatus>(FormStatus.Idle);
   const [message, setMessage] = useState('');
-  const [idea, setIdea] = useState<HustleIdea | null>(null);
 
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-  
-  const generateHustleIdea = async () => {
-    setStatus(FormStatus.Generating);
-    setMessage('');
-
-    try {
-      const schema = {
-        type: Type.OBJECT,
-        properties: {
-          title: {
-            type: Type.STRING,
-            description: 'A catchy and descriptive title for the AI hustle idea.'
-          },
-          description: {
-            type: Type.STRING,
-            description: 'A brief, one-paragraph description of the idea.'
-          },
-          steps: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.STRING
-            },
-            description: 'A list of 3-5 actionable first steps to get started.'
-          }
-        },
-        required: ['title', 'description', 'steps']
-      };
-      
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: "You are an expert startup advisor for developers. Generate a unique and actionable side hustle idea that leverages AI. The idea should be something that can be started with minimal investment. Focus on creating a real-world, cash-flowing digital asset.",
-        config: {
-          responseMimeType: "application/json",
-          responseSchema: schema,
-        },
-      });
-      
-      const ideaJson: HustleIdea = JSON.parse(response.text.trim());
-      setIdea(ideaJson);
-      setStatus(FormStatus.Success);
-
-    } catch (error) {
-      console.error("Error generating hustle idea:", error);
-      setStatus(FormStatus.Error);
-      setMessage('Could not generate an idea. Please try again.');
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -81,42 +28,41 @@ export const WaitlistForm = () => {
 
     setStatus(FormStatus.Loading);
 
-    // Simulate the backend API call which was previously failing.
-    // This provides a smooth user experience and allows us to proceed
-    // to the new AI-powered feature.
-    setTimeout(() => {
-      generateHustleIdea();
-    }, 1500);
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, consent }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ message: 'An unknown error occurred.' }));
+        throw new Error(errorData.message || 'Failed to join the waitlist. Please try again.');
+      }
+
+      setStatus(FormStatus.Success);
+
+    } catch (error) {
+      setStatus(FormStatus.Error);
+      if (error instanceof Error) {
+        setMessage(error.message);
+      } else {
+        setMessage('An unexpected error occurred. Please try again.');
+      }
+    }
   };
 
-  if (status === FormStatus.Success && idea) {
+  if (status === FormStatus.Success) {
     return (
-      <div className="text-left p-6 bg-brand-background/50 rounded-lg border border-brand-border flex flex-col items-center animate-fade-in">
+      <div className="text-center p-8 bg-brand-background/50 rounded-lg border border-brand-border flex flex-col items-center animate-fade-in">
         <div className="w-16 h-16 bg-brand-green/10 rounded-full flex items-center justify-center mb-4 ring-8 ring-brand-green/5">
-            <LightbulbIcon className="text-4xl text-brand-green" />
+            <CheckCircleIcon className="text-4xl text-brand-green" />
         </div>
-        <h3 className="text-xl font-semibold text-brand-text-primary mb-2 text-center">You're on the list!</h3>
-        <p className="text-brand-text-body text-center mb-6">As a thank you, here's a unique AI hustle idea just for you:</p>
-        
-        <div className="w-full bg-brand-background p-4 rounded-md border border-brand-border/50">
-            <h4 className="font-bold text-brand-green">{idea.title}</h4>
-            <p className="text-brand-text-body text-sm mt-2 mb-4">{idea.description}</p>
-            <h5 className="font-semibold text-brand-text-primary text-sm mb-2">Your first steps:</h5>
-            <ul className="list-disc list-inside space-y-1 text-sm text-brand-text-body">
-                {idea.steps.map((step, index) => <li key={index}>{step}</li>)}
-            </ul>
-        </div>
+        <h3 className="text-xl font-semibold text-brand-text-primary mb-2">You're on the list!</h3>
+        <p className="text-brand-text-body">We'll be in touch soon. Welcome to the community!</p>
       </div>
-    );
-  }
-
-  if (status === FormStatus.Generating) {
-    return (
-        <div className="text-center p-8 bg-brand-background/50 rounded-lg border border-brand-border flex flex-col items-center">
-            <LoadingSpinnerIcon className="text-4xl text-brand-green mb-4" />
-            <h3 className="text-xl font-semibold text-brand-text-primary mb-2">Finalizing your spot...</h3>
-            <p className="text-brand-text-body">Generating your AI hustle idea...</p>
-        </div>
     );
   }
 
