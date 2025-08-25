@@ -8,10 +8,10 @@ function initializeFirebaseAdmin() {
   if (!admin.apps.length) {
     // The FIREBASE_SERVICE_ACCOUNT_KEY should be the full JSON content of the service account key.
     // This is read from Vercel environment variables.
-    if (!process.env.FIREBASE_SERVICE_ACCOUNT_KEY) {
-        throw new Error("FIREBASE_SERVICE_ACCOUNT_KEY environment variable is not set.");
+    if (!process.env.VITE_FIREBASE_SERVICE_ACCOUNT_KEY) {
+        throw new Error("VITE_FIREBASE_SERVICE_ACCOUNT_KEY environment variable is not set.");
     }
-    const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+    const serviceAccount = JSON.parse(process.env.VITE_FIREBASE_SERVICE_ACCOUNT_KEY);
 
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
