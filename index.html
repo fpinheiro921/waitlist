@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The AI Hustle Lab - Waitlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                green: '#1EC46A',
+                background: '#0D1117',
+                card: '#161C2D',
+                border: '#30363d',
+                text: {
+                  primary: '#FFFFFF',
+                  body: '#B0BAC9',
+                  secondary: '#6E7681',
+                },
+              },
+              button: {
+                disabled: {
+                  bg: '#21262d',
+                  text: '#6E7681'
+                }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      /* Custom style to make the checkbox green when checked */
+      input[type="checkbox"]:checked {
+        background-color: #1EC46A;
+        border-color: #1EC46A;
+      }
+      input[type="checkbox"]:checked:hover {
+        background-color: #1EC46A;
+        border-color: #1EC46A;
+      }
+       input[type="checkbox"]:focus {
+        --tw-ring-color: #1EC46A;
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        box-shadow: 0 0 0 2px var(--tw-ring-color);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "firebase-admin": "https://aistudiocdn.com/firebase-admin@^13.4.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-brand-background text-brand-text-primary">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
