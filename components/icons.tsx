@@ -27,3 +27,10 @@ export const LoadingSpinnerIcon = ({ className }: { className?: string }) => (
     progress_activity
   </span>
 );
+
+// Icon for AI Idea
+export const LightbulbIcon = ({ className }: { className?: string }) => (
+    <span className={`material-symbols-outlined ${className}`} aria-hidden="true">
+        lightbulb
+    </span>
+);

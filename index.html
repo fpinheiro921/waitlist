@@ -35,7 +35,16 @@
                   text: '#6E7681'
                 }
               }
-            }
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+            },
           }
         }
       }
@@ -70,7 +79,8 @@
     "react": "https://aistudiocdn.com/react@^19.1.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
     "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "firebase-admin": "https://aistudiocdn.com/firebase-admin@^13.4.0"
+    "firebase-admin": "https://aistudiocdn.com/firebase-admin@^13.4.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^0.15.0"
   }
 }
 </script>
