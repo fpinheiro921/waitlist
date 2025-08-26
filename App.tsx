@@ -57,8 +57,8 @@ const App = () => {
                     <p className="text-gray-300">You will lock in a rate of $19/month, forever. The price will increase to $39/month for the public after the launch window closes.</p>
                 </div>
                 <div>
-                    <h4 className="font-semibold">EXCLUSIVE STATUS</h4>
-                    <p className="text-gray-300">You will receive a permanent "Founding Member" badge in the community, a public signal of your early support.</p>
+                    <h4 className="font-semibold">IMMEDIATE FULL ACCESS</h4>
+                    <p className="text-gray-300">Get access to all modules from day one, including the flagship AI ContentGenius app. This is my top-tier content creation engine, integrating all my knowledge on content strategy and AI generation, which will only be available to regular members who reach Level 9.</p>
                 </div>
                 <div>
                     <h4 className="font-semibold">FIRST ACCESS</h4>
