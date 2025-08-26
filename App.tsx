@@ -47,7 +47,7 @@ const App = () => {
             <ul className="space-y-3">
                 <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">THE STUDIO TOOLKIT:</span> A suite of specialized AI agents for debugging code, optimizing sales pages, and accelerating your workflow.</span></li>
                 <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">THE PROMPT ENGINE:</span> The A-Z playbook for turning ideas into high-quality AI outputs.</span></li>
-                <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">STUDIO OPS: MINDSET & STACK:</span> The complete playbook for the "Idea -> Build -> Ship -> Monetize" loop.</span></li>
+                <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">STUDIO OPS: MINDSET & STACK:</span> The complete playbook for the "Idea -&gt; Build -&gt; Ship -&gt; Monetize" loop.</span></li>
                 <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">PRODUCTION BLUEPRINTS:</span> Full, end-to-end breakdowns of our micro-apps like AI Hustle Writer, SpecForge, and The Signal Bay, complete with starter code and launch results.</span></li>
             </ul>
         </div>
