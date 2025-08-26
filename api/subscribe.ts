@@ -1,22 +1,56 @@
 // api/subscribe.ts
-import * as admin from 'firebase-admin';
+import admin from 'firebase-admin';
 
 // Helper function to initialize Firebase Admin SDK.
 // This prevents re-initialization on every serverless function invocation in a hot-start scenario.
 function initializeFirebaseAdmin() {
   // Check if the app is already initialized to prevent errors.
-  if (!admin.apps.length) {
-    // The FIREBASE_SERVICE_ACCOUNT_KEY should be the full JSON content of the service account key.
-    // This is read from Vercel environment variables.
-    if (!process.env.VITE_FIREBASE_SERVICE_ACCOUNT_KEY) {
-        throw new Error("VITE_FIREBASE_SERVICE_ACCOUNT_KEY environment variable is not set.");
+  if (admin.apps.length) {
+    return admin.firestore();
+  }
+
+  try {
+    const projectId = process.env.FIREBASE_PROJECT_ID;
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    const privateKeyRaw = process.env.FIREBASE_PRIVATE_KEY;
+
+    // Check for the required environment variables.
+    if (!projectId || !clientEmail || !privateKeyRaw) {
+      console.error("Firebase Admin SDK: One or more required Firebase environment variables are not set.", {
+          projectId: !!projectId,
+          clientEmail: !!clientEmail,
+          privateKey: !!privateKeyRaw
+      });
+      throw new Error("One or more required Firebase environment variables are not set.");
     }
-    const serviceAccount = JSON.parse(process.env.VITE_FIREBASE_SERVICE_ACCOUNT_KEY);
+
+    // The private key from the environment variable often has its newlines escaped as '\\n'.
+    // We need to replace them with actual newline characters '\n' for the SDK to parse it correctly.
+    const privateKey = privateKeyRaw.replace(/\\n/g, '\n');
+
+    // --- START NEW DEBUG LOGGING ---
+    console.log("Firebase Admin SDK: Attempting to initialize with the following credentials:");
+    console.log("Project ID:", projectId);
+    console.log("Client Email:", clientEmail);
+    console.log("Private Key Snippet (first 30 chars):", privateKey.substring(0, 30) + "...");
+    console.log("Private Key Snippet (last 30 chars):", "..." + privateKey.substring(privateKey.length - 30));
+    // --- END NEW DEBUG LOGGING ---
 
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
+      credential: admin.credential.cert({
+        projectId: projectId,
+        clientEmail: clientEmail,
+        privateKey: privateKey,
+      }),
     });
+
+    console.log("Firebase Admin SDK: Initialization successful.");
+  } catch (error) {
+    console.error("Firebase Admin SDK: Initialization failed.", error);
+    // Re-throw the error to be caught by the handler's try-catch block.
+    throw error;
   }
+
   return admin.firestore();
 }
 
@@ -58,8 +92,9 @@ export default async function handler(req, res) {
     return res.status(200).json({ message: 'Success' });
 
   } catch (error) {
-    console.error("Error writing to Firestore:", error);
+    // The detailed error from initializeFirebaseAdmin will be logged by Vercel.
+    console.error("Error in handler after trying to initialize Firebase:", error);
     // Return 503 Service Unavailable for any failure with the database connection.
-    return res.status(503).json({ message: 'Service Unavailable' });
+    return res.status(503).json({ message: 'Service Unavailable - Initialization Failed' });
   }
 }
