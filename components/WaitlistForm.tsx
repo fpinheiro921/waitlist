@@ -120,11 +120,11 @@ export const WaitlistForm = () => {
               Submitting...
             </>
           ) : (
-            'Reserve My Founding Member Spot'
+            'Reserve My Founding Member Spot ($19/mo for life)'
           )}
         </button>
       </form>
-      <p className="text-center text-sm text-brand-text-secondary mt-4">It's free to join the waitlist. No commitment, no spam.</p>
+      <p className="text-center text-sm text-brand-text-secondary mt-4">It's free to join the waitlist. No commitment. You'll simply get the best offer I'll ever make.</p>
       {status === FormStatus.Error && message && (
         <div className="mt-4 flex items-center text-red-500 text-sm">
             <ErrorCircleIcon className="text-xl mr-2 flex-shrink-0" />
