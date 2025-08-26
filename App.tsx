@@ -48,21 +48,21 @@ const App = () => {
             </ul>
         </div>
 
-        <div className="w-full max-w-2xl p-8 bg-brand-card rounded-xl border-2 border-brand-green shadow-lg shadow-green-500/20 text-left space-y-4">
-            <h3 className="text-2xl font-bold text-brand-text-primary text-center">THE FOUNDING MEMBER OFFER (THIS WILL NOT BE REPEATED)</h3>
-            <p className="text-brand-text-body text-center">I'm limiting the initial launch to <span className="font-semibold text-brand-green">50 Founding Members</span> to ensure I can give everyone my full attention. By joining the waitlist today, you are securing your spot to get this one-time-only Grand Slam Offer:</p>
+        <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-left space-y-4 text-white">
+            <h3 className="text-2xl font-bold text-center">THE FOUNDING MEMBER OFFER (THIS WILL NOT BE REPEATED)</h3>
+            <p className="text-center">I'm limiting the initial launch to <span className="font-semibold text-brand-green">50 Founding Members</span> to ensure I can give everyone my full attention. By joining the waitlist today, you are securing your spot to get this one-time-only Grand Slam Offer:</p>
             <div className="space-y-4 pt-4">
                 <div>
-                    <h4 className="font-semibold text-brand-text-primary">LIFETIME DISCOUNT</h4>
-                    <p className="text-brand-text-body">You will lock in a rate of $19/month, forever. The price will increase to $39/month for the public after the launch window closes.</p>
+                    <h4 className="font-semibold">LIFETIME DISCOUNT</h4>
+                    <p className="text-gray-300">You will lock in a rate of $19/month, forever. The price will increase to $39/month for the public after the launch window closes.</p>
                 </div>
                 <div>
-                    <h4 className="font-semibold text-brand-text-primary">EXCLUSIVE STATUS</h4>
-                    <p className="text-brand-text-body">You will receive a permanent "Founding Member" badge in the community, a public signal of your early support.</p>
+                    <h4 className="font-semibold">EXCLUSIVE STATUS</h4>
+                    <p className="text-gray-300">You will receive a permanent "Founding Member" badge in the community, a public signal of your early support.</p>
                 </div>
                 <div>
-                    <h4 className="font-semibold text-brand-text-primary">FIRST ACCESS</h4>
-                    <p className="text-brand-text-body">You'll be the first to know when the doors open.</p>
+                    <h4 className="font-semibold">FIRST ACCESS</h4>
+                    <p className="text-gray-300">You'll be the first to know when the doors open.</p>
                 </div>
             </div>
         </div>
