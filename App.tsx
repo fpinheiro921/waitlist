@@ -1,6 +1,7 @@
 import React from 'react';
 import { WaitlistForm } from './components/WaitlistForm';
 import { ScienceIcon } from './components/icons';
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
   return (
@@ -76,6 +77,7 @@ const App = () => {
         </footer>
 
       </main>
+      <Analytics />
     </div>
   );
 };
