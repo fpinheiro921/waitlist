@@ -61,12 +61,12 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
   }
 
-  const { email, consent } = req.body;
+  const { firstName, email, consent } = req.body;
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
   // 1. Validate Input
-  if (!email || !emailRegex.test(email) || !consent) {
-    console.warn("Invalid submission received", { email, consent: !!consent });
+  if (!firstName || !email || !emailRegex.test(email) || !consent) {
+    console.warn("Invalid submission received", { firstName, email, consent: !!consent });
     return res.status(400).json({ message: 'Invalid input' });
   }
 
@@ -83,6 +83,7 @@ export default async function handler(req, res) {
 
     // 3. Add the new email to the 'waitlist_signups' collection in Firestore.
     await db.collection('waitlist_signups').add({
+      firstName: firstName,
       email: email,
       consent: consent,
       createdAt: admin.firestore.FieldValue.serverTimestamp(), // Add a server-side timestamp.

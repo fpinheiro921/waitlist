@@ -3,6 +3,7 @@ import { FormStatus } from '../types';
 import { CheckCircleIcon, ErrorCircleIcon, LoadingSpinnerIcon } from './icons';
 
 export const WaitlistForm = () => {
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<FormStatus>(FormStatus.Idle);
@@ -13,6 +14,12 @@ export const WaitlistForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMessage('');
+
+    if (!firstName) {
+      setStatus(FormStatus.Error);
+      setMessage('Please enter your first name.');
+      return;
+    }
 
     if (!emailRegex.test(email)) {
       setStatus(FormStatus.Error);
@@ -34,7 +41,7 @@ export const WaitlistForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, consent }),
+        body: JSON.stringify({ firstName, email, consent }),
       });
 
       if (!response.ok) {
@@ -71,6 +78,23 @@ export const WaitlistForm = () => {
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="relative">
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+              if (status === FormStatus.Error) {
+                setStatus(FormStatus.Idle);
+                setMessage('');
+              }
+            }}
+            placeholder="Your Name"
+            disabled={isLoading}
+            className="w-full px-4 py-3 bg-brand-background border border-brand-border rounded-lg text-brand-text-primary placeholder-brand-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all duration-200"
+            aria-label="First Name"
+          />
+        </div>
         <div className="relative">
           <input
             type="email"
