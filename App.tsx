@@ -3,6 +3,7 @@ import { WaitlistForm } from './components/WaitlistForm';
 import { ScienceIcon } from './components/icons';
 import { Analytics } from '@vercel/analytics/react';
 import FeaturesGridMockup from './components/landing/FeaturesGridMockup';
+import ProblemSolutionMockup from './components/landing/ProblemSolutionMockup';
 import {
   AcademicCapIcon,
   BeakerIcon,
@@ -30,20 +31,19 @@ const App = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-2xl p-8 bg-brand-card rounded-xl border border-brand-border shadow-lg shadow-black/25 text-left space-y-6">
-            <div>
-                <h2 className="text-2xl font-bold text-brand-text-primary mb-2 text-center">The Problem</h2>
-                <p className="text-brand-text-body">
-                    Your Notion is a graveyard of good ideas. You know AI is the ultimate leverage, but you're stuck in the gap between concept and cash flow. You don't have time for a 6-month dev cycle, and you're tired of "guru" courses that deliver theory instead of a shippable product.
-                </p>
-            </div>
-            <div>
-                <h2 className="text-2xl font-bold text-brand-text-primary mb-2 text-center">The Solution</h2>
-                <p className="text-brand-text-body">
-                    This is not a course. <span className="font-bold">It's a production system.</span> Inside, you'll learn to operate like a lean digital product studio using my process and tools.
-                </p>
-            </div>
-        </div>
+        <ProblemSolutionMockup
+          tilt={false}
+          problem={{
+            title: 'The Problem',
+            description:
+              "Your Notion is a graveyard of good ideas. You know AI is the ultimate leverage, but you're stuck in the gap between concept and cash flow. You don't have time for a 6-month dev cycle, and you're tired of \"guru\" courses that deliver theory instead of a shippable product.",
+          }}
+          solution={{
+            title: 'The Solution',
+            description:
+              "This is not a course. It's a production system. Inside, you'll learn to operate like a lean digital product studio using my process and tools.",
+          }}
+        />
 
         <div className="w-full max-w-2xl text-left">
             <h3 className="text-2xl font-bold text-brand-text-primary mb-4 text-center">A LOOK INSIDE: YOUR PRODUCTION WORKFLOW</h3>
