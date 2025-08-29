@@ -5,7 +5,6 @@ import { Analytics } from '@vercel/analytics/react';
 import FeaturesGridMockup from './components/landing/FeaturesGridMockup';
 import ProblemSolutionMockup from './components/landing/ProblemSolutionMockup';
 import TestimonialsMockup from './components/landing/TestimonialsMockup';
-import ProductRatingsMockup from './components/landing/ProductRatingsMockup';
 import {
   AcademicCapIcon,
   BeakerIcon,
@@ -78,7 +77,10 @@ const App = () => {
         </div>
 
         <div className="w-full max-w-2xl text-left space-y-8">
-            <h3 className="text-2xl font-bold text-brand-text-primary mb-4 text-center">Don't Just Take Our Word For It</h3>
+            <div className="text-center">
+                <h3 className="text-2xl font-bold text-brand-text-primary mb-2">Join a Community Backed by Proven Results</h3>
+                <p className="text-brand-text-body max-w-xl mx-auto">We don't just talk theory. Our suite of existing tools on Gumroad consistently receives 5-star ratings from builders just like you.</p>
+            </div>
             <TestimonialsMockup
               tilt={false}
               testimonials={[
@@ -96,7 +98,6 @@ const App = () => {
                 },
               ]}
             />
-            <ProductRatingsMockup />
         </div>
 
         <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-center space-y-6 text-white">

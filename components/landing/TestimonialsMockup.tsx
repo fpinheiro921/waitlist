@@ -52,18 +52,15 @@ const TestimonialsMockup: React.FC<TestimonialsMockupProps> = ({
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex items-start gap-4"
+              className="flex flex-col"
               style={{ opacity: 1 - index * 0.2 }}
             >
-              <div className="w-10 h-10 bg-brand-card/50 rounded-full flex-shrink-0 border border-brand-border">
-                {/* Avatar placeholder */}
-              </div>
-              <div className="flex flex-col">
+              <blockquote className="italic text-brand-text-body">
+                "{testimonial.quote}"
+              </blockquote>
+              <div className="mt-2">
                 <p className="font-semibold text-brand-text-primary">{testimonial.name}</p>
                 <p className="text-xs text-brand-text-secondary opacity-70">{testimonial.role}</p>
-                <blockquote className="mt-2 text-sm italic text-brand-text-body">
-                  "{testimonial.quote}"
-                </blockquote>
               </div>
             </div>
           ))}
