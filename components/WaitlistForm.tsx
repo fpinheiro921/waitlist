@@ -78,37 +78,29 @@ export const WaitlistForm = () => {
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="relative">
+        <div className="flex flex-col sm:flex-row gap-3">
           <input
             type="text"
             value={firstName}
             onChange={(e) => {
               setFirstName(e.target.value);
-              if (status === FormStatus.Error) {
-                setStatus(FormStatus.Idle);
-                setMessage('');
-              }
+              if (status === FormStatus.Error) setStatus(FormStatus.Idle);
             }}
-            placeholder="Your Name"
+            placeholder="First Name"
             disabled={isLoading}
-            className="w-full px-4 py-3 bg-brand-background border border-brand-border rounded-lg text-brand-text-primary placeholder-brand-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all duration-200"
+            className="flex-grow w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-brand-green transition-all duration-200"
             aria-label="First Name"
           />
-        </div>
-        <div className="relative">
           <input
             type="email"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
-              if (status === FormStatus.Error) {
-                setStatus(FormStatus.Idle);
-                setMessage('');
-              }
+              if (status === FormStatus.Error) setStatus(FormStatus.Idle);
             }}
-            placeholder="elon@tesla.com"
+            placeholder="Email Address"
             disabled={isLoading}
-            className="w-full px-4 py-3 bg-brand-background border border-brand-border rounded-lg text-brand-text-primary placeholder-brand-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all duration-200"
+            className="flex-grow w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-brand-green transition-all duration-200"
             aria-label="Email address"
           />
         </div>
@@ -118,37 +110,28 @@ export const WaitlistForm = () => {
             id="consent"
             type="checkbox"
             checked={consent}
-            onChange={(e) => {
-                setConsent(e.target.checked);
-                if (status === FormStatus.Error) {
-                    setStatus(FormStatus.Idle);
-                    setMessage('');
-                }
-            }}
+            onChange={(e) => setConsent(e.target.checked)}
             disabled={isLoading}
-            className="w-5 h-5 bg-brand-background border-brand-border rounded text-brand-green focus:ring-brand-green cursor-pointer"
+            className="w-5 h-5 bg-transparent border-white/30 rounded text-brand-green focus:ring-brand-green cursor-pointer"
           />
-          <label htmlFor="consent" className="text-sm text-brand-text-body">
-            I agree to receive emails and accept the <a href="#" className="underline hover:text-brand-green transition-colors">Privacy Policy</a>.
+          <label htmlFor="consent" className="text-sm text-white/70">
+            I agree to receive emails and accept the Privacy Policy.
           </label>
         </div>
 
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full flex items-center justify-center px-4 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-200 disabled:bg-button-disabled-bg disabled:text-button-disabled-text disabled:cursor-not-allowed transform hover:-translate-y-0.5 active:translate-y-0"
+          className="w-full flex items-center justify-center px-4 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-200 disabled:bg-gray-500 disabled:cursor-not-allowed transform hover:-translate-y-0.5 active:translate-y-0"
         >
           {isLoading ? (
-            <>
-              <LoadingSpinnerIcon className="-ml-1 mr-3 h-5 w-5" />
-              Submitting...
-            </>
+            <LoadingSpinnerIcon className="-ml-1 mr-3 h-5 w-5" />
           ) : (
-            'Reserve My Founding Member Spot ($19/mo for life)'
+            'Secure My Founding Member Spot'
           )}
         </button>
       </form>
-      <p className="text-center text-sm text-brand-text-secondary mt-4">It's free to join the waitlist. No commitment. You'll simply get the best offer I'll ever make.</p>
+      <p className="text-center text-sm text-white/60 mt-4">The 'No-Spam' Guarantee: We'll only send high-value insights. Unsubscribe anytime.</p>
       {status === FormStatus.Error && message && (
         <div className="mt-4 flex items-center text-red-500 text-sm">
             <ErrorCircleIcon className="text-xl mr-2 flex-shrink-0" />
