@@ -2,6 +2,13 @@ import React from 'react';
 import { WaitlistForm } from './components/WaitlistForm';
 import { ScienceIcon } from './components/icons';
 import { Analytics } from '@vercel/analytics/react';
+import FeaturesGridMockup from './components/landing/FeaturesGridMockup';
+import {
+  AcademicCapIcon,
+  BeakerIcon,
+  MegaphoneIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline';
 
 const App = () => {
   return (
@@ -38,15 +45,34 @@ const App = () => {
             </div>
         </div>
 
-        <div className="w-full max-w-2xl p-8 bg-brand-card rounded-xl border border-brand-border shadow-lg shadow-black/25 text-left">
+        <div className="w-full max-w-2xl text-left">
             <h3 className="text-2xl font-bold text-brand-text-primary mb-4 text-center">A LOOK INSIDE: YOUR PRODUCTION WORKFLOW</h3>
-            <p className="text-brand-text-body mb-4 text-center">When you join, you get access to the entire operational playbook and the AI apps we use to execute it:</p>
-            <ul className="space-y-3">
-                <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">THE PROCESS:</span> Learn the "Vibe Coding" methodology, a rapid-fire system for building and launching micro-apps in a single weekend.</span></li>
-                <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">SPECFORGE APP:</span> Use my proprietary app to turn your raw idea into a comprehensive technical spec and PRD, ready for any AI code generation platform.</span></li>
-                <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">SIGNAL APP:</span> Grow your personal brand on X/Twitter using my custom-built tool for creating high-engagement, strategic AI-powered comments.</span></li>
-                <li className="flex items-start"><span className="text-brand-green mr-2">✅</span><span className="text-brand-text-body"><span className="font-semibold text-brand-text-primary">CONTENTGENIUS AI:</span> Install a complete content engine. Use my flagship app to find your niche, define your content strategy, and generate a full workflow of blogs, newsletters, and tweets, all trained on hundreds of expert-level marketing courses.</span></li>
-            </ul>
+            <p className="text-brand-text-body mb-8 text-center">When you join, you get access to the entire operational playbook and the AI apps we use to execute it:</p>
+            <FeaturesGridMockup
+              tilt={false}
+              features={[
+                {
+                  icon: AcademicCapIcon,
+                  title: 'THE PROCESS',
+                  description: 'Learn the "Vibe Coding" methodology, a rapid-fire system for building and launching micro-apps in a single weekend.',
+                },
+                {
+                  icon: BeakerIcon,
+                  title: 'SPECFORGE APP',
+                  description: 'Use my proprietary app to turn your raw idea into a comprehensive technical spec and PRD, ready for any AI code generation platform.',
+                },
+                {
+                  icon: MegaphoneIcon,
+                  title: 'SIGNAL APP',
+                  description: 'Grow your personal brand on X/Twitter using my custom-built tool for creating high-engagement, strategic AI-powered comments.',
+                },
+                {
+                  icon: SparklesIcon,
+                  title: 'CONTENTGENIUS AI',
+                  description: 'Install a complete content engine. Use my flagship app to find your niche, define your content strategy, and generate a full workflow of blogs, newsletters, and tweets.',
+                },
+              ]}
+            />
         </div>
 
         <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-left space-y-4 text-white">
