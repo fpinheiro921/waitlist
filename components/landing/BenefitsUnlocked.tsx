@@ -25,7 +25,6 @@ const BenefitsUnlocked: React.FC<BenefitsUnlockedProps> = ({
       } transition-transform duration-300 ease-in-out hover:rotate-0 ${className}`}
     >
       <div className="p-6 bg-brand-background rounded-xl">
-        <h3 className="text-2xl font-bold text-brand-text-primary mb-4 text-center">Benefits Unlocked</h3>
         <div className="grid md:grid-cols-2 gap-6">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-start gap-3">

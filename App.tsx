@@ -31,10 +31,10 @@ const App = () => {
 
           <div className="flex flex-col items-center gap-4">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-text-primary">
-              For Busy Operators: The Blueprint to Launch a Cash-Flowing Micro-App
+              Join the Waitlist for The AI Hustle Lab Skool Community
             </h1>
             <p className="text-lg md:text-xl max-w-xl text-brand-text-body leading-relaxed">
-              Stop collecting ideas. Start shipping assets. Join the waitlist for The AI Hustle Lab and get the system to turn your ideas into a portfolio of profitable micro-apps.
+              Get ready to join a community of builders and get access to the system that turns your ideas into a portfolio of profitable micro-apps. Join the waitlist for a founding member discount.
             </p>
           </div>
         </div>
@@ -214,8 +214,8 @@ const App = () => {
         />
 
         <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-center space-y-6 text-white">
-            <h3 className="text-3xl font-bold">Claim Your Founding Member Grand Slam Offer</h3>
-            <p className="text-lg">This will not be repeated. The first <span className="font-semibold text-brand-green">50 Founding Members</span> lock in an insane deal. By entering your email, you secure your spot.</p>
+            <h3 className="text-3xl font-bold">Join the Waitlist and Secure Your Founding Member Discount</h3>
+            <p className="text-lg">The first <span className="font-semibold text-brand-green">50 Founding Members</span> will get a lifetime discount on the community. Enter your email to secure your spot.</p>
             
             <div className="w-full max-w-md mx-auto pt-4">
                 <WaitlistForm />
