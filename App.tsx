@@ -7,7 +7,6 @@ import TestimonialsMockup from './components/landing/TestimonialsMockup';
 import PainPoints from './components/landing/PainPoints';
 import BenefitsUnlocked from './components/landing/BenefitsUnlocked';
 import FeaturesGridMockup from './components/landing/FeaturesGridMockup';
-import SneakPeek from './components/landing/SneakPeek';
 import WhatYouGet from './components/landing/WhatYouGet';
 import Bonuses from './components/landing/Bonuses';
 import Pricing from './components/landing/Pricing';
@@ -23,7 +22,7 @@ import {
 const App = () => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 antialiased selection:bg-brand-green selection:text-white">
-      <main className="max-w-2xl w-full mx-auto text-center flex flex-col items-center gap-8 md:gap-12">
+      <main className="max-w-4xl w-full mx-auto text-center flex flex-col items-center gap-8 md:gap-12">
         
         <div className="flex flex-col items-center gap-6">
           <div className="w-16 h-16 bg-brand-card rounded-xl flex items-center justify-center border border-brand-border shadow-lg shadow-black/25">
@@ -134,27 +133,6 @@ const App = () => {
             />
         </div>
 
-        <SneakPeek
-          tilt={false}
-          items={[
-            {
-              title: 'The Vibe Coding Methodology',
-              description: 'A rapid-fire system for building and launching micro-apps.',
-            },
-            {
-              title: 'SpecForge App',
-              description: 'Turn your raw idea into a comprehensive technical spec.',
-            },
-            {
-              title: 'Signal App',
-              description: 'Grow your personal brand on X/Twitter.',
-            },
-            {
-              title: 'ContentGenius AI',
-              description: 'Install a complete content engine for your niche.',
-            },
-          ]}
-        />
 
 
         <WhatYouGet
