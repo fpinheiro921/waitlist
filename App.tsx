@@ -6,9 +6,8 @@ import AudienceProfiles from './components/landing/AudienceProfiles';
 import TestimonialsMockup from './components/landing/TestimonialsMockup';
 import PainPoints from './components/landing/PainPoints';
 import BenefitsUnlocked from './components/landing/BenefitsUnlocked';
-import HowItWorks from './components/landing/HowItWorks';
+import FeaturesGridMockup from './components/landing/FeaturesGridMockup';
 import SneakPeek from './components/landing/SneakPeek';
-import Credibility from './components/landing/Credibility';
 import WhatYouGet from './components/landing/WhatYouGet';
 import Bonuses from './components/landing/Bonuses';
 import Pricing from './components/landing/Pricing';
@@ -18,6 +17,7 @@ import {
   AcademicCapIcon,
   BeakerIcon,
   MegaphoneIcon,
+  SparklesIcon,
 } from '@heroicons/react/24/outline';
 
 const App = () => {
@@ -64,16 +64,16 @@ const App = () => {
           tilt={false}
           painPoints={[
             {
-              title: 'Idea Overload',
-              description: "Your Notion is a graveyard of good ideas. You're stuck in the gap between concept and cash flow.",
+              title: 'Struggling to Start',
+              description: "You're feeling overwhelmed, uncertain, or unsure about how to take the first step.",
             },
             {
-              title: 'Slow Dev Cycles',
-              description: "You don't have time for a 6-month development cycle. You need to ship faster.",
+              title: 'Getting Lost in the Process',
+              description: "You've started down this path before, but got lost along the way.",
             },
             {
-              title: 'Theory Overload',
-              description: "You're tired of 'guru' courses that deliver theory instead of a shippable product.",
+              title: 'Spinning Your Wheels',
+              description: "You're putting in the effort, but not seeing the results you want. You're working hard, not smart.",
             },
           ]}
         />
@@ -82,44 +82,57 @@ const App = () => {
           tilt={false}
           benefits={[
             {
-              title: 'Ship Faster',
-              description: 'Go from idea to shippable product in a weekend.',
+              title: 'Stop Publishing Into the Void',
+              description: 'And start building a loyal audience.',
             },
             {
-              title: 'Build a Portfolio',
-              description: 'Turn your ideas into a portfolio of profitable micro-apps.',
+              title: 'Stop Lurking, Start Creating',
+              description: 'And become a recognized voice in your niche.',
             },
             {
-              title: 'Actionable System',
-              description: 'Get a production system, not just another course.',
+              title: 'No More Blinking Cursor',
+              description: 'Just a clear path to a finished product.',
             },
             {
-              title: 'Leverage AI',
-              description: 'Use AI as the ultimate leverage to build and grow.',
+              title: 'Ship, Don\'t Just Dream',
+              description: 'Launch a real product in a weekend.',
+            },
+            {
+              title: 'Build Your Empire',
+              description: 'Create a portfolio of cash-flowing micro-apps.',
             },
           ]}
         />
 
-        <HowItWorks
-          tilt={false}
-          steps={[
-            {
-              icon: AcademicCapIcon,
-              title: 'Learn the Process',
-              description: 'Master the "Vibe Coding" methodology for rapid building.',
-            },
-            {
-              icon: BeakerIcon,
-              title: 'Forge Your Spec',
-              description: 'Use our app to turn your idea into a technical spec.',
-            },
-            {
-              icon: MegaphoneIcon,
-              title: 'Grow Your Brand',
-              description: 'Use our tools to grow your personal brand on social media.',
-            },
-          ]}
-        />
+        <div className="w-full max-w-2xl text-left">
+            <h3 className="text-2xl font-bold text-brand-text-primary mb-4 text-center">A LOOK INSIDE: YOUR PRODUCTION WORKFLOW</h3>
+            <p className="text-brand-text-body mb-8 text-center">When you join, you get access to the entire operational playbook and the AI apps we use to execute it:</p>
+            <FeaturesGridMockup
+              tilt={false}
+              features={[
+                {
+                  icon: AcademicCapIcon,
+                  title: 'THE PROCESS',
+              description: 'Master the "Vibe Coding" methodology, a rapid-fire system for building and launching micro-apps in a single weekend.',
+                },
+                {
+                  icon: BeakerIcon,
+                  title: 'SPECFORGE APP',
+                  description: 'Use my proprietary app to turn your raw idea into a comprehensive technical spec and PRD, ready for any AI code generation platform.',
+                },
+                {
+                  icon: MegaphoneIcon,
+                  title: 'SIGNAL APP',
+                  description: 'Grow your personal brand on X/Twitter using my custom-built tool for creating high-engagement, strategic AI-powered comments.',
+                },
+                {
+                  icon: SparklesIcon,
+                  title: 'CONTENTGENIUS AI',
+                  description: 'Install a complete content engine. Use my flagship app to find your niche, define your content strategy, and generate a full workflow of blogs, newsletters, and tweets.',
+                },
+              ]}
+            />
+        </div>
 
         <SneakPeek
           tilt={false}
@@ -143,22 +156,16 @@ const App = () => {
           ]}
         />
 
-        <Credibility
-          tilt={false}
-          name="Your Name"
-          title="Creator of The AI Hustle Lab"
-          bio="I'm a builder who loves to ship. I've built a portfolio of profitable micro-apps and now I'm sharing my system with you."
-          imageUrl="https://via.placeholder.com/150"
-        />
 
         <WhatYouGet
           tilt={false}
           items={[
-            'The complete "Vibe Coding" methodology.',
-            'Access to the SpecForge App.',
-            'Access to the Signal App.',
-            'Access to the ContentGenius AI.',
-            'A community of builders.',
+            'Unlock the AI Hustle Lab Production System and start building profitable micro-apps.',
+            'Get lifetime access to the SpecForge App and turn your ideas into actionable specs.',
+            'Use the Signal App to build your personal brand and attract opportunities.',
+            'Deploy the ContentGenius AI to create a content engine for your niche.',
+            'Join a community of ambitious builders and get the support you need to succeed.',
+            'Access a library of exclusive content to accelerate your growth.',
           ]}
         />
 
@@ -166,16 +173,16 @@ const App = () => {
           tilt={false}
           bonuses={[
             {
-              title: 'Lifetime Discount',
-              description: 'Lock in a special price forever as a founding member.',
+              title: 'Access to Bonus Apps',
+              description: 'Get exclusive access to new apps as they are developed.',
             },
             {
-              title: 'Immediate Full Access',
-              description: 'Get all tools from day one.',
+              title: 'Lifetime Updates',
+              description: 'Receive all future updates to the system and tools for free.',
             },
             {
-              title: 'First Access',
-              description: 'Be the first to know when the doors open.',
+              title: 'Founding Member Status',
+              description: 'Be recognized as a founding member of The AI Hustle Lab.',
             },
           ]}
         />
@@ -185,9 +192,15 @@ const App = () => {
           price={19}
           originalPrice={39}
           features={[
-            'Full Access to all tools',
+            'The AI Hustle Lab Production System',
+            'SpecForge App',
+            'Signal App',
+            'ContentGenius AI',
             'Community Access',
-            'Lifetime Discount',
+            'Exclusive Content',
+            'Access to Bonus Apps',
+            'Lifetime Updates',
+            'Founding Member Status',
           ]}
         />
 
@@ -195,23 +208,31 @@ const App = () => {
           tilt={false}
           faqs={[
             {
-              question: 'Is this a course?',
-              answer: 'No, this is a production system. You will learn by doing.',
+              question: 'How much does this cost?',
+              answer: 'The founding member price is $19/month. This is a lifetime discount.',
             },
             {
-              question: 'What if I have no coding experience?',
-              answer: 'The system is designed for operators, not just developers. We leverage AI to do the heavy lifting.',
-            },
-            {
-              question: 'What is the time commitment?',
+              question: 'How much time should I dedicate to this?',
               answer: 'You can go from idea to shippable product in a weekend.',
+            },
+            {
+              question: 'Is this for people with no coding experience?',
+              answer: 'Yes, the system is designed for operators, not just developers. We leverage AI to do the heavy lifting.',
+            },
+            {
+              question: 'If I don’t like it, can I request a refund?',
+              answer: "Yes, if you don't ship a product within 30 days, you get a full refund.",
+            },
+            {
+              question: 'How long will it take for me to see results?',
+              answer: 'You can see results in as little as a weekend by shipping your first micro-app.',
             },
           ]}
         />
 
         <RefundPolicy
           tilt={false}
-          policy="If you don't ship a product within 30 days, you get a full refund. No questions asked."
+          policy="This is a subscription service. You can cancel your subscription at any time. No questions asked."
         />
 
         <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-center space-y-6 text-white">
@@ -220,6 +241,7 @@ const App = () => {
             
             <div className="w-full max-w-md mx-auto pt-4">
                 <WaitlistForm />
+                <p className="text-sm text-white/60 mt-4">Join the waitlist and get our free guide to building your first micro-app.</p>
             </div>
         </div>
 
