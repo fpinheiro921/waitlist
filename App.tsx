@@ -2,14 +2,22 @@ import React from 'react';
 import { WaitlistForm } from './components/WaitlistForm';
 import { ScienceIcon } from './components/icons';
 import { Analytics } from '@vercel/analytics/react';
-import FeaturesGridMockup from './components/landing/FeaturesGridMockup';
-import ProblemSolutionMockup from './components/landing/ProblemSolutionMockup';
+import AudienceProfiles from './components/landing/AudienceProfiles';
 import TestimonialsMockup from './components/landing/TestimonialsMockup';
+import PainPoints from './components/landing/PainPoints';
+import BenefitsUnlocked from './components/landing/BenefitsUnlocked';
+import HowItWorks from './components/landing/HowItWorks';
+import SneakPeek from './components/landing/SneakPeek';
+import Credibility from './components/landing/Credibility';
+import WhatYouGet from './components/landing/WhatYouGet';
+import Bonuses from './components/landing/Bonuses';
+import Pricing from './components/landing/Pricing';
+import FAQ from './components/landing/FAQ';
+import RefundPolicy from './components/landing/RefundPolicy';
 import {
   AcademicCapIcon,
   BeakerIcon,
   MegaphoneIcon,
-  SparklesIcon,
 } from '@heroicons/react/24/outline';
 
 const App = () => {
@@ -32,84 +40,184 @@ const App = () => {
           </div>
         </div>
 
-        <ProblemSolutionMockup
+        <AudienceProfiles />
+
+        <TestimonialsMockup
           tilt={false}
-          problem={{
-            title: 'The Problem',
-            description:
-              "Your Notion is a graveyard of good ideas. You know AI is the ultimate leverage, but you're stuck in the gap between concept and cash flow. You don't have time for a 6-month dev cycle, and you're tired of \"guru\" courses that deliver theory instead of a shippable product.",
-          }}
-          solution={{
-            title: 'The Solution',
-            description:
-              "This is not a course. It's a production system. Inside, you'll learn to operate like a lean digital product studio using my process and tools.",
-          }}
+          testimonials={[
+            {
+              name: 'Dan McClellan',
+              role: 'Business Strategist',
+              quote:
+                "Defining your niche is critical... If you can get people to do that in the first part of your course they'll have a strong foundation, and be a lot more likely to see success with the rest of the course.",
+            },
+            {
+              name: 'Nile Gomez',
+              role: 'Content Strategist',
+              quote:
+                "Medium Muse GPT by AI Hustle Lab is a powerhouse tool you don’t want to miss. This isn’t just another AI writing assistant—it’s a strategic weapon designed to elevate your writing, boost engagement, and grow your audience.",
+            },
+          ]}
         />
 
-        <div className="w-full max-w-2xl text-left">
-            <h3 className="text-2xl font-bold text-brand-text-primary mb-4 text-center">A LOOK INSIDE: YOUR PRODUCTION WORKFLOW</h3>
-            <p className="text-brand-text-body mb-8 text-center">When you join, you get access to the entire operational playbook and the AI apps we use to execute it:</p>
-            <FeaturesGridMockup
-              tilt={false}
-              features={[
-                {
-                  icon: AcademicCapIcon,
-                  title: 'THE PROCESS',
-                  description: 'Learn the "Vibe Coding" methodology, a rapid-fire system for building and launching micro-apps in a single weekend.',
-                },
-                {
-                  icon: BeakerIcon,
-                  title: 'SPECFORGE APP',
-                  description: 'Use my proprietary app to turn your raw idea into a comprehensive technical spec and PRD, ready for any AI code generation platform.',
-                },
-                {
-                  icon: MegaphoneIcon,
-                  title: 'SIGNAL APP',
-                  description: 'Grow your personal brand on X/Twitter using my custom-built tool for creating high-engagement, strategic AI-powered comments.',
-                },
-                {
-                  icon: SparklesIcon,
-                  title: 'CONTENTGENIUS AI',
-                  description: 'Install a complete content engine. Use my flagship app to find your niche, define your content strategy, and generate a full workflow of blogs, newsletters, and tweets.',
-                },
-              ]}
-            />
-        </div>
+        <PainPoints
+          tilt={false}
+          painPoints={[
+            {
+              title: 'Idea Overload',
+              description: "Your Notion is a graveyard of good ideas. You're stuck in the gap between concept and cash flow.",
+            },
+            {
+              title: 'Slow Dev Cycles',
+              description: "You don't have time for a 6-month development cycle. You need to ship faster.",
+            },
+            {
+              title: 'Theory Overload',
+              description: "You're tired of 'guru' courses that deliver theory instead of a shippable product.",
+            },
+          ]}
+        />
 
-        <div className="w-full max-w-2xl text-left space-y-8">
-            <div className="text-center">
-                <h3 className="text-2xl font-bold text-brand-text-primary mb-2">Join a Community Backed by Proven Results</h3>
-                <p className="text-brand-text-body max-w-xl mx-auto">We don't just talk theory. Our suite of existing tools on Gumroad consistently receives 5-star ratings from builders just like you.</p>
-            </div>
-            <TestimonialsMockup
-              tilt={false}
-              testimonials={[
-                {
-                  name: 'Dan McClellan',
-                  role: 'Business Strategist',
-                  quote:
-                    "Defining your niche is critical... If you can get people to do that in the first part of your course they'll have a strong foundation, and be a lot more likely to see success with the rest of the course.",
-                },
-                {
-                  name: 'Nile Gomez',
-                  role: 'Content Strategist',
-                  quote:
-                    "Medium Muse GPT by AI Hustle Lab is a powerhouse tool you don’t want to miss. This isn’t just another AI writing assistant—it’s a strategic weapon designed to elevate your writing, boost engagement, and grow your audience.",
-                },
-              ]}
-            />
-        </div>
+        <BenefitsUnlocked
+          tilt={false}
+          benefits={[
+            {
+              title: 'Ship Faster',
+              description: 'Go from idea to shippable product in a weekend.',
+            },
+            {
+              title: 'Build a Portfolio',
+              description: 'Turn your ideas into a portfolio of profitable micro-apps.',
+            },
+            {
+              title: 'Actionable System',
+              description: 'Get a production system, not just another course.',
+            },
+            {
+              title: 'Leverage AI',
+              description: 'Use AI as the ultimate leverage to build and grow.',
+            },
+          ]}
+        />
+
+        <HowItWorks
+          tilt={false}
+          steps={[
+            {
+              icon: AcademicCapIcon,
+              title: 'Learn the Process',
+              description: 'Master the "Vibe Coding" methodology for rapid building.',
+            },
+            {
+              icon: BeakerIcon,
+              title: 'Forge Your Spec',
+              description: 'Use our app to turn your idea into a technical spec.',
+            },
+            {
+              icon: MegaphoneIcon,
+              title: 'Grow Your Brand',
+              description: 'Use our tools to grow your personal brand on social media.',
+            },
+          ]}
+        />
+
+        <SneakPeek
+          tilt={false}
+          items={[
+            {
+              title: 'The Vibe Coding Methodology',
+              description: 'A rapid-fire system for building and launching micro-apps.',
+            },
+            {
+              title: 'SpecForge App',
+              description: 'Turn your raw idea into a comprehensive technical spec.',
+            },
+            {
+              title: 'Signal App',
+              description: 'Grow your personal brand on X/Twitter.',
+            },
+            {
+              title: 'ContentGenius AI',
+              description: 'Install a complete content engine for your niche.',
+            },
+          ]}
+        />
+
+        <Credibility
+          tilt={false}
+          name="Your Name"
+          title="Creator of The AI Hustle Lab"
+          bio="I'm a builder who loves to ship. I've built a portfolio of profitable micro-apps and now I'm sharing my system with you."
+          imageUrl="https://via.placeholder.com/150"
+        />
+
+        <WhatYouGet
+          tilt={false}
+          items={[
+            'The complete "Vibe Coding" methodology.',
+            'Access to the SpecForge App.',
+            'Access to the Signal App.',
+            'Access to the ContentGenius AI.',
+            'A community of builders.',
+          ]}
+        />
+
+        <Bonuses
+          tilt={false}
+          bonuses={[
+            {
+              title: 'Lifetime Discount',
+              description: 'Lock in a special price forever as a founding member.',
+            },
+            {
+              title: 'Immediate Full Access',
+              description: 'Get all tools from day one.',
+            },
+            {
+              title: 'First Access',
+              description: 'Be the first to know when the doors open.',
+            },
+          ]}
+        />
+
+        <Pricing
+          tilt={false}
+          price={19}
+          originalPrice={39}
+          features={[
+            'Full Access to all tools',
+            'Community Access',
+            'Lifetime Discount',
+          ]}
+        />
+
+        <FAQ
+          tilt={false}
+          faqs={[
+            {
+              question: 'Is this a course?',
+              answer: 'No, this is a production system. You will learn by doing.',
+            },
+            {
+              question: 'What if I have no coding experience?',
+              answer: 'The system is designed for operators, not just developers. We leverage AI to do the heavy lifting.',
+            },
+            {
+              question: 'What is the time commitment?',
+              answer: 'You can go from idea to shippable product in a weekend.',
+            },
+          ]}
+        />
+
+        <RefundPolicy
+          tilt={false}
+          policy="If you don't ship a product within 30 days, you get a full refund. No questions asked."
+        />
 
         <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-center space-y-6 text-white">
             <h3 className="text-3xl font-bold">Claim Your Founding Member Grand Slam Offer</h3>
             <p className="text-lg">This will not be repeated. The first <span className="font-semibold text-brand-green">50 Founding Members</span> lock in an insane deal. By entering your email, you secure your spot.</p>
             
-            <div className="text-left max-w-lg mx-auto space-y-4">
-                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">LIFETIME DISCOUNT:</span> Lock in $19/month forever (normally $39/month).</span></div>
-                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">IMMEDIATE FULL ACCESS:</span> Get all tools, including the flagship ContentGenius AI, from day one.</span></div>
-                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">FIRST ACCESS:</span> Be the first to know when the doors open.</span></div>
-            </div>
-
             <div className="w-full max-w-md mx-auto pt-4">
                 <WaitlistForm />
             </div>
