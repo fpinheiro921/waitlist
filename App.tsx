@@ -59,49 +59,51 @@ const App = () => {
           ]}
         />
 
-        <PainPoints
-          tilt={false}
-          painPoints={[
-            {
-              title: 'Struggling to Start',
-              description: "You're feeling overwhelmed, uncertain, or unsure about how to take the first step.",
-            },
-            {
-              title: 'Getting Lost in the Process',
-              description: "You've started down this path before, but got lost along the way.",
-            },
-            {
-              title: 'Spinning Your Wheels',
-              description: "You're putting in the effort, but not seeing the results you want. You're working hard, not smart.",
-            },
-          ]}
-        />
+        <div className="grid md:grid-cols-2 gap-8">
+          <PainPoints
+            tilt={false}
+            painPoints={[
+              {
+                title: 'Struggling to Start',
+                description: "You're feeling overwhelmed, uncertain, or unsure about how to take the first step.",
+              },
+              {
+                title: 'Getting Lost in the Process',
+                description: "You've started down this path before, but got lost along the way.",
+              },
+              {
+                title: 'Spinning Your Wheels',
+                description: "You're putting in the effort, but not seeing the results you want. You're working hard, not smart.",
+              },
+            ]}
+          />
 
-        <BenefitsUnlocked
-          tilt={false}
-          benefits={[
-            {
-              title: 'Stop Publishing Into the Void',
-              description: 'And start building a loyal audience.',
-            },
-            {
-              title: 'Stop Lurking, Start Creating',
-              description: 'And become a recognized voice in your niche.',
-            },
-            {
-              title: 'No More Blinking Cursor',
-              description: 'Just a clear path to a finished product.',
-            },
-            {
-              title: 'Ship, Don\'t Just Dream',
-              description: 'Launch a real product in a weekend.',
-            },
-            {
-              title: 'Build Your Empire',
-              description: 'Create a portfolio of cash-flowing micro-apps.',
-            },
-          ]}
-        />
+          <BenefitsUnlocked
+            tilt={false}
+            benefits={[
+              {
+                title: 'Stop Publishing Into the Void',
+                description: 'And start building a loyal audience.',
+              },
+              {
+                title: 'Stop Lurking, Start Creating',
+                description: 'And become a recognized voice in your niche.',
+              },
+              {
+                title: 'No More Blinking Cursor',
+                description: 'Just a clear path to a finished product.',
+              },
+              {
+                title: 'Ship, Don\'t Just Dream',
+                description: 'Launch a real product in a weekend.',
+              },
+              {
+                title: 'Build Your Empire',
+                description: 'Create a portfolio of cash-flowing micro-apps.',
+              },
+            ]}
+          />
+        </div>
 
         <div className="w-full max-w-2xl text-left">
             <h3 className="text-2xl font-bold text-brand-text-primary mb-4 text-center">A LOOK INSIDE: YOUR PRODUCTION WORKFLOW</h3>
@@ -135,35 +137,37 @@ const App = () => {
 
 
 
-        <WhatYouGet
-          tilt={false}
-          items={[
-            'Unlock the AI Hustle Lab Production System and start building profitable micro-apps.',
-            'Get lifetime access to the SpecForge App and turn your ideas into actionable specs.',
-            'Use the Signal App to build your personal brand and attract opportunities.',
-            'Deploy the ContentGenius AI to create a content engine for your niche.',
-            'Join a community of ambitious builders and get the support you need to succeed.',
-            'Access a library of exclusive content to accelerate your growth.',
-          ]}
-        />
+        <div className="grid md:grid-cols-2 gap-8">
+          <WhatYouGet
+            tilt={false}
+            items={[
+              'Unlock the AI Hustle Lab Production System and start building profitable micro-apps.',
+              'Get lifetime access to the SpecForge App and turn your ideas into actionable specs.',
+              'Use the Signal App to build your personal brand and attract opportunities.',
+              'Deploy the ContentGenius AI to create a content engine for your niche.',
+              'Join a community of ambitious builders and get the support you need to succeed.',
+              'Access a library of exclusive content to accelerate your growth.',
+            ]}
+          />
 
-        <Bonuses
-          tilt={false}
-          bonuses={[
-            {
-              title: 'Access to Bonus Apps',
-              description: 'Get exclusive access to new apps as they are developed.',
-            },
-            {
-              title: 'Lifetime Updates',
-              description: 'Receive all future updates to the system and tools for free.',
-            },
-            {
-              title: 'Founding Member Status',
-              description: 'Be recognized as a founding member of The AI Hustle Lab.',
-            },
-          ]}
-        />
+          <Bonuses
+            tilt={false}
+            bonuses={[
+              {
+                title: 'Access to Bonus Apps',
+                description: 'Get exclusive access to new apps as they are developed.',
+              },
+              {
+                title: 'Lifetime Updates',
+                description: 'Receive all future updates to the system and tools for free.',
+              },
+              {
+                title: 'Founding Member Status',
+                description: 'Be recognized as a founding member of The AI Hustle Lab.',
+              },
+            ]}
+          />
+        </div>
 
         <Pricing
           tilt={false}
@@ -213,7 +217,7 @@ const App = () => {
           policy="This is a subscription service. You can cancel your subscription at any time. No questions asked."
         />
 
-        <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-center space-y-6 text-white">
+        <div id="waitlist-form" className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-center space-y-6 text-white">
             <h3 className="text-3xl font-bold">Join the Waitlist and Secure Your Founding Member Discount</h3>
             <p className="text-lg">The first <span className="font-semibold text-brand-green">50 Founding Members</span> will get a lifetime discount on the community. Enter your email to secure your spot.</p>
             

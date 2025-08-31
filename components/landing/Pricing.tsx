@@ -40,9 +40,9 @@ const Pricing: React.FC<PricingProps> = ({
             </li>
           ))}
         </ul>
-        <button className="w-full px-4 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-200">
+        <a href="#waitlist-form" className="w-full block px-4 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-200">
           Secure My Spot
-        </button>
+        </a>
       </div>
     </div>
   );
