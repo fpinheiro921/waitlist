@@ -102,12 +102,12 @@ const App = () => {
 
         <div className="w-full max-w-2xl p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl border-2 border-brand-green shadow-2xl shadow-green-500/30 text-center space-y-6 text-white">
             <h3 className="text-3xl font-bold">Claim Your Founding Member Grand Slam Offer</h3>
-            <p className="text-lg">This will not be repeated. The first <span className="font-semibold text-brand-green">50 Founding Members</span> lock in an insane deal. By entering your email, you secure your spot.</p>
+            <p className="text-lg">The waitlist closes tonight at midnight. Only <span className="font-semibold text-brand-green">50 total spots available</span> - waitlist members get the exclusive deal below. After the waitlist closes, remaining spots go to the public at regular price. Secure your spot now.</p>
             
             <div className="text-left max-w-lg mx-auto space-y-4">
-                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">LIFETIME DISCOUNT:</span> Lock in $19/month forever (normally $39/month).</span></div>
-                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">IMMEDIATE FULL ACCESS:</span> Get all tools, including the flagship ContentGenius AI, from day one.</span></div>
-                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">FIRST ACCESS:</span> Be the first to know when the doors open.</span></div>
+                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">WAITLIST EXCLUSIVE:</span> $19/month forever (public pays $39/month).</span></div>
+                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">INSTANT ACCESS:</span> Get everything immediately (public gets dripped access later).</span></div>
+                <div className="flex items-start gap-3"><span className="text-brand-green pt-1">✅</span><span><span className="font-bold">FOUNDING MEMBER STATUS:</span> Exclusive bonuses and priority access to new tools.</span></div>
             </div>
 
             <div className="w-full max-w-md mx-auto pt-4">
